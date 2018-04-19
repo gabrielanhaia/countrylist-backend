@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class CountryController extends Controller
 {
     /**
-     * MÈtodo respons·vel pelo recurso da API de listagem de paÌses.
+     * M√©todo respons√°vel pelo recurso da API de listagem de pa√≠ses.
      * @param CountryModel $countryModel Model de paises (Recebida na controller via DI)
      * @param Request $request
      * @return CountryResource

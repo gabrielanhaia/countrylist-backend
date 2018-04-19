@@ -4,8 +4,8 @@ use Illuminate\Database\Seeder;
 
 /**
  * Class CountryListSeeder
- * Seed responsável por ler o arquivo com os países e adicionar seus registros na base de dados.
- * Após a leitura ele move o arquivo para a pasta de arquivos processados por segurança.
+ * Seed responsÃ¡vel por ler o arquivo com os paÃ­ses e adicionar seus registros na base de dados.
+ * ApÃ³s a leitura ele move o arquivo para a pasta de arquivos processados por seguranÃ§a.
  *
  * @author Gabriel Anhaia <anhaia.gabriel@gmail.com>
  */

@@ -19,8 +19,8 @@ class CreateTableCountries extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('country_code')->comment = 'Código identificador do país.';
-            $table->string('country_description')->comment = 'Nome/Descrição do país.';
+            $table->string('country_code')->comment = 'CÃ³digo identificador do paÃ­s.';
+            $table->string('country_description')->comment = 'Nome/DescriÃ§Ã£o do paÃ­s.';
             $table->timestamps();
         });
     }
