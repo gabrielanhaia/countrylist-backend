@@ -43,8 +43,8 @@ class CountryListSeeder extends Seeder
             }
 
             \App\Country::firstOrCreate([
-                'country_code' => $line[0],
-                'country_description' => $line[1]
+                'country_code' => trim($line[0]),
+                'country_description' => trim($line[1])
             ]);
         }
 
