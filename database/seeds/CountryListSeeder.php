@@ -24,7 +24,7 @@ class CountryListSeeder extends Seeder
 
         $storagePath = storage_path() . DIRECTORY_SEPARATOR . 'seed' . DIRECTORY_SEPARATOR;
 
-        $processedFilesPath = $storagePath . DIRECTORY_SEPARATOR . 'seed_processed_files' . DIRECTORY_SEPARATOR;
+        $processedFilesPath = storage_path() . DIRECTORY_SEPARATOR . 'seed_processed_files' . DIRECTORY_SEPARATOR;
 
         if (file_exists($processedFilesPath . $fileName)) {
             return false;
