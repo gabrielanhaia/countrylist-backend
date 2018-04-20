@@ -22,8 +22,6 @@ class CountryController extends Controller
      */
     public function index(CountryModel $countryModel, Request $request)
     {
-//$request->header('Content-Type', 'application/csv');
-
         $orderDescending = (bool) $request->order_descending;
 
         $contries = $countryModel
