@@ -22,10 +22,12 @@ class CountryController extends Controller
      */
     public function index(CountryModel $countryModel, Request $request)
     {
+//$request->header('Content-Type', 'application/csv');
+
         $orderDescending = (bool) $request->order_descending;
 
         $contries = $countryModel
-            ->all()
+            ->all(['country_code', 'country_description'])
             ->sortBy('country_code', SORT_REGULAR, $orderDescending);
 
         return new CountryCollection($contries);
