@@ -18,15 +18,19 @@ class CountryListSeeder extends Seeder
      */
     public function run()
     {
+        $remotePath = 'https://gist.githubusercontent.com/ivanrosolen/f8e9e588adf0286e341407aca63b5230/raw/99e205ea104190c5e09935f06b19c30c4c0cf17e/country';
+
         $fileName = 'country.csv';
 
         $storagePath = storage_path() . DIRECTORY_SEPARATOR . 'seed' . DIRECTORY_SEPARATOR;
 
-        $processedFilesPath = $storagePath . DIRECTORY_SEPARATOR . 'processed_files' . DIRECTORY_SEPARATOR;
+        $processedFilesPath = $storagePath . DIRECTORY_SEPARATOR . 'seed_processed_files' . DIRECTORY_SEPARATOR;
 
-        if (!file_exists($storagePath . $fileName)) {
+        if (file_exists($processedFilesPath . $fileName)) {
             return false;
         }
+
+        copy($remotePath, $storagePath . $fileName);
 
         $fileHandle = fopen($storagePath . $fileName, 'r');
 
