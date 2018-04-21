@@ -11,5 +11,7 @@
 |
 */
 
+Route::get('/paises', 'CountryController@index');
 Route::get('/', 'CountryController@index');
 
+Route::get('/paises/gerar_csv', 'CountryController@generateCsvFull');

@@ -28,8 +28,33 @@ class CountryController extends Controller
             ->orderBy('country_code')
             ->paginate($itensPerPage);
 
-
         return view('country.index')
             ->with('countries', $countries);
+    }
+
+    /**
+     * @param CountryModel $countryModel
+     */
+    public function generateCsvFull(CountryModel $countryModel)
+    {
+        $countries = $countryModel
+            ->all('country_code', 'country_description')
+            ->toArray();
+
+        $arrayIndexCsv = ['codigo', 'nome'];
+
+        array_unshift($countries, $arrayIndexCsv);
+
+        $csvName = 'countries_' . time();
+
+        $generatorCsv = new \CountrylistCsv\CustomGenerator\CsvGenerator();
+
+        $generatorCsv
+            ->setEnclosure('"')
+            ->setDelimiter(',')
+            ->setDownloadFile(true)
+            ->setFileNameDownload($csvName)
+            ->setRawData($countries)
+            ->generate();
     }
 }
