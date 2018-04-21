@@ -42,7 +42,7 @@ class CountryListSeeder extends Seeder
 
             $line = explode('   ', $line);
 
-            if (empty($line[0]) || empty($line[1])) {
+            if (empty($line[0]) || empty($line[1]) || strlen($line[0]) != 2) {
                 continue;
             }
 
