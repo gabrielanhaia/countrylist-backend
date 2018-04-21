@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Country as CountryModel;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\Country as CountryResource;
 use App\Http\Resources\CountryCollection;
 use Illuminate\Http\Request;
