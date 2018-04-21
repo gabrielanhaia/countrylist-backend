@@ -5,7 +5,25 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                Lista de Países (Country List)
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="">Lista de Países (Country List)</a>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opções
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href=" {{ url('/paises/gerar_csv') }}">Gerar CSV Completo</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
             </div>
             <div class="card-block">
                 <table class="table table-striped table-hover">
