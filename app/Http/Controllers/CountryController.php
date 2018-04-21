@@ -18,7 +18,7 @@ class CountryController extends Controller
      * Método responsável pelo recurso da API de listagem de países.
      * @param CountryModel $countryModel Model de paises (Recebida na controller via DI)
      * @param Request $request
-     * @return CountryResource
+     * @return CountryCollection
      */
     public function index(CountryModel $countryModel, Request $request)
     {
