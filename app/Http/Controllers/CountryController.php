@@ -33,6 +33,8 @@ class CountryController extends Controller
     }
 
     /**
+     * Método responsável por gerar um CSV com os dados dos paises.
+     *
      * @param CountryModel $countryModel
      */
     public function generateCsvFull(CountryModel $countryModel)
