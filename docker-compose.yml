@@ -1,0 +1,37 @@
+# v2 syntax
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  arizona-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: arizona-mysql
+    volumes:
+      - arizona-mysql-data:/var/lib/mysql
+    ports:
+      - "127.0.0.3:3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=arizona
+      - MYSQL_DATABASE=arizona
+      - MYSQL_USER=arizona
+      - MYSQL_PASSWORD=arizona
+    network_mode: default
+
+  # PHP (with Caddy)
+  app:
+    image: ambientum/php:7.1-caddy
+    container_name: arizona-app
+    volumes:
+      - '/var/www/html/countrylist-backend:/var/www/app'
+    ports:
+      - "8080:8080"
+      - "443:443"
+    links:
+      - mysql
+    network_mode: default
