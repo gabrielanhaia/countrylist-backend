@@ -15,7 +15,7 @@ services:
     volumes:
       - arizona-mysql-data:/var/lib/mysql
     ports:
-      - "127.0.0.3:3309:3306"
+      - "127.0.0.1:3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=arizona
       - MYSQL_DATABASE=arizona
@@ -30,8 +30,7 @@ services:
     volumes:
       - '/var/www/html/countrylist-backend:/var/www/app'
     ports:
-      - "8080:8080"
-      - "443:443"
+      - "127.0.0.1:8080:8080"
     links:
       - mysql
     network_mode: default
